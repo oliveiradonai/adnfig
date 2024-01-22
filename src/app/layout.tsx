@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
 	title: "Adonai Figueiredo | Portfolio",
 	description:
-		"Confira meu Portfólio com projetos Frontend em HTML, CSS, JavaScript, ReactJS e NodeJS.",
+		"Check out my portfolio featuring Frontend projects in HTML, CSS, JavaScript, ReactJS, and NodeJS.",
 	authors: [
 		{
 			name: "Adonai Figueiredo",
@@ -38,6 +38,31 @@ export default function RootLayout({
 				<link
 					rel="stylesheet"
 					href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+				/>
+
+				<meta property="og:url" content="https://adnfig.me" />
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content="Adonai Figueiredo | Portfolio" />
+				<meta
+					property="og:description"
+					content="Check out my portfolio featuring Frontend projects in HTML, CSS, JavaScript, ReactJS, and NodeJS."
+				/>
+				<meta
+					property="og:image"
+					content="https://i.postimg.cc/XXMvYmL2/imagem-2024-01-21-220018065.png"
+				/>
+
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta property="twitter:domain" content="adnfig.me" />
+				<meta property="twitter:url" content="https://adnfig.me" />
+				<meta name="twitter:title" content="Adonai Figueiredo | Portfolio" />
+				<meta
+					name="twitter:description"
+					content="Check out my portfolio featuring Frontend projects in HTML, CSS, JavaScript, ReactJS, and NodeJS."
+				/>
+				<meta
+					name="twitter:image"
+					content="https://i.postimg.cc/XXMvYmL2/imagem-2024-01-21-220018065.png"
 				/>
 			</head>
 			<body>{children}</body>
