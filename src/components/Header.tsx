@@ -1,9 +1,6 @@
-import Logo from "../../public/logo-red.png";
-import Image from "next/image";
-
 export function Header() {
 	return (
-		<section className="flex w-full py-4 px-8 sm:px-16 h-20">
+		<section className="flex w-full py-4 px-8 lg:px-16 h-20">
 			<div className="flex gap-20 items-center">
 				<span className="text-2xl font-semibold text-brand">
 					Adonai Figueiredo

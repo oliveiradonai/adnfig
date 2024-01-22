@@ -1,9 +1,9 @@
 export function About() {
 	return (
-		<div className="w-full sm:max-w-[1120px] px-8 sm:p-0 my-0 mx-auto min-h-[100dvh] flex items-center justify-center flex-col gap-8">
+		<div className="w-full sm:max-w-[1120px] px-8 md:px-8 my-0 mx-auto min-h-[100dvh] flex items-center justify-center flex-col gap-8">
 			<div className="text-4xl font-bold mainText text-brand">About me</div>
 
-			<div className="text-2xl">
+			<div className="text-lg sm:text-2xl">
 				In 2017, concurrently with my enrollment in college, I embarked on an
 				internship focused on customer support and software implementation. This
 				role, which I was hired for, became a five-year journey. Consequently, I
