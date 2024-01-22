@@ -13,8 +13,11 @@ export function Technologies() {
 				const scrollContent = Array.from(scrollInnerRef.current.children);
 
 				for (const item of scrollContent) {
-					const duplicatedItem = item.cloneNode(true);
-					scrollInnerRef.current.appendChild(duplicatedItem);
+					if (item instanceof Element) {
+						const duplicatedItem = item.cloneNode(true) as Element;
+						duplicatedItem.setAttribute("aria-hidden", "true");
+						scrollInnerRef.current.appendChild(duplicatedItem);
+					}
 				}
 			}
 		}
@@ -27,11 +30,11 @@ export function Technologies() {
 	return (
 		<div
 			ref={scrollRef}
-			className="max-w-[1120px] py-0 px-8 mt-14 text-7xl data-[animated=true]:overflow-hidden group"
+			className="w-full px-8 sm:max-w-[1120px] mt-14 text-7xl data-[animated=true]:overflow-hidden group"
 		>
 			<div
 				ref={scrollInnerRef}
-				className="flex gap-16 flex-wrap group-data-[animated=true]:w-max group-data-[animated=true]:flex-nowrap group-data-[animated=true]:animate-scroll"
+				className="px-8 flex gap-16 flex-wrap group-data-[animated=true]:w-max group-data-[animated=true]:flex-nowrap group-data-[animated=true]:animate-scroll"
 			>
 				<i className="devicon-react-original" />
 				<i className="devicon-nextjs-original-wordmark" />

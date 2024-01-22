@@ -3,9 +3,11 @@ import Image from "next/image";
 
 export function Header() {
 	return (
-		<section className="flex w-full py-4 px-16 h-20">
+		<section className="flex w-full py-4 px-8 sm:px-16 h-20">
 			<div className="flex gap-20 items-center">
-				<Image className="h-full w-full" src={Logo} alt="Logo" />
+				<span className="text-2xl font-semibold text-brand">
+					Adonai Figueiredo
+				</span>
 			</div>
 
 			<div className="ml-auto flex items-center gap-10 text-4xl">
