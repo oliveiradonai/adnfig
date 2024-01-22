@@ -53,8 +53,8 @@ body {
 }
 
 [data-animated="true"] {
-  -webkit-mask: linear-gradient(90deg, transparent, #FFFFFF 20%, #FFFFFF 80%, transparent);
-  mask: linear-gradient(90deg, transparent, #FFFFFF);
+  -webkit-mask: linear-gradient(90deg, transparent, #FFFFFF 20% 80%, transparent);
+  mask: linear-gradient(90deg, transparent, #FFFFFF 20% 80%, transparent);
 }
 
 .dots {
