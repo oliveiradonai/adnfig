@@ -1,5 +1,6 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Poppins, Montserrat } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -65,7 +66,10 @@ export default function RootLayout({
 					content="https://i.postimg.cc/XXMvYmL2/imagem-2024-01-21-220018065.png"
 				/>
 			</head>
-			<body>{children}</body>
+			<body>
+				{children}
+				<Analytics />
+			</body>
 		</html>
 	);
 }
