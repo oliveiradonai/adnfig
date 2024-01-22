@@ -7,7 +7,7 @@ export function Hero() {
 	const myAge = GetMyAge().toString() || "some";
 
 	return (
-		<section className="w-full sm:max-w-[1120px] px-8 my-0 mx-auto min-h-[calc(100dvh-5rem)] flex items-center justify-center flex-col">
+		<section className="w-full sm:max-w-[1120px] px-8 my-0 mx-auto min-h-[calc(100vh-5rem)] flex items-center justify-center flex-col">
 			<div className="flex flex-col-reverse items-center sm:flex-row gap-8 sm:gap-16">
 				<div className="flex flex-col gap-8 sm:px-0">
 					<div className="text-4xl sm:text-7xl mainText">

@@ -1,6 +1,6 @@
 export function About() {
 	return (
-		<div className="w-full sm:max-w-[1120px] px-8 md:px-8 my-0 mx-auto min-h-[100dvh] flex items-center justify-center flex-col gap-8">
+		<div className="w-full sm:max-w-[1120px] px-8 md:px-8 my-0 mx-auto min-h-[100vh] flex items-center justify-center flex-col gap-8">
 			<div className="text-4xl font-bold mainText text-brand">About me</div>
 
 			<div className="text-lg sm:text-2xl">

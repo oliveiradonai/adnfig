@@ -24,7 +24,7 @@ export function Projects() {
 	});
 
 	return (
-		<div className="w-full px-8 sm:p-0 sm:max-w-[1120px] my-0 mx-auto min-h-[100dvh] flex items-center justify-center flex-col">
+		<div className="w-full px-8 sm:p-0 sm:max-w-[1120px] my-0 mx-auto min-h-[100vh] flex items-center justify-center flex-col">
 			<div className="text-4xl font-bold mainText text-brand">My projects</div>
 			<div className="text-lg text-center text-gray-400 mt-8 max-w-[650px]">
 				Take a peek at some of the projects I created during my development
