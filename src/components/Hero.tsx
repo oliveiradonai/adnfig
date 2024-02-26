@@ -20,9 +20,9 @@ export function Hero() {
 						boost my skills and keep up with the latest in tech.
 					</div>
 				</div>
-				<Image
+				<img
 					className="max-w-[200px] sm:max-w-[350px]"
-					src={Profile}
+					src="https://i.postimg.cc/Bnb4sFKD/image.png"
 					alt="Adonai's selfie"
 				/>
 			</div>
