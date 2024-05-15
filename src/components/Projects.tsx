@@ -52,6 +52,17 @@ export function Projects() {
 										About the project:
 									</span>
 									<p className="text-base sm:text-lg">{project.description}</p>
+
+									<div className="flex items-center w-full gap-6 mt-4 text-5xl">
+										{project.technologies.map((technology) => {
+											return (
+												<i
+													key={`${project.id}_${technology}`}
+													className={`${technology} text-brand`}
+												/>
+											);
+										})}
+									</div>
 								</div>
 							</div>
 							<div className="flex flex-row items-center justify-center gap-8">

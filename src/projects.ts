@@ -1,5 +1,19 @@
 const projectsList = [
 	{
+		id: "c168ad0f-f1d2-425d-b228-780ad25f481f",
+		name: "Weather App",
+		description:
+			"In this project, inspired by the Windows Weather Forecast application, I aimed to create a web page that dynamically adapts to the weather conditions of the location selected by the user. Therefore, I developed this project using ReactJS and Typescript, consuming a free weather forecast data API provided by OpenWeather using the Axios HTTP client.",
+		urlProject: "https://adnfig-weather-app.vercel.app",
+		urlImage: "https://i.postimg.cc/Jz90gfVY/imagem-2024-01-21-154840076.png",
+		urlRepo: "https://github.com/oliveiradonai/weather-app",
+		technologies: [
+			"devicon-react-original",
+			"devicon-typescript-plain",
+			"devicon-css3-plain-wordmark",
+		],
+	},
+	{
 		id: "487a92c6-c181-4301-a2f0-7c9ab698dd62",
 		name: "Ignite Feed",
 		description:
@@ -7,6 +21,11 @@ const projectsList = [
 		urlProject: "https://adnfig-ignite-feed.vercel.app",
 		urlImage: "https://i.postimg.cc/mrbNc1hG/imagem-2024-01-21-154627829.png",
 		urlRepo: "https://github.com/oliveiradonai/01-fundamentos-reactjs-ts",
+		technologies: [
+			"devicon-react-original",
+			"devicon-typescript-plain",
+			"devicon-figma-plain",
+		],
 	},
 	{
 		id: "5f43af86-2c87-46cb-99d8-8a23489d7b7d",
@@ -16,6 +35,12 @@ const projectsList = [
 		urlProject: "https://adnfig-habits.vercel.app",
 		urlImage: "https://i.postimg.cc/bNc6yJ0q/imagem-2024-01-21-154705348.png",
 		urlRepo: "https://github.com/oliveiradonai/nlw-habits-web",
+		technologies: [
+			"devicon-react-original",
+			"devicon-typescript-plain",
+			"devicon-nodejs-plain-wordmark",
+			"devicon-figma-plain",
+		],
 	},
 	{
 		id: "98f29dc9-bd5b-4a4f-b402-fbf699bf9345",
@@ -25,15 +50,12 @@ const projectsList = [
 		urlProject: "https://adnfig-dt-money.vercel.app",
 		urlImage: "https://i.postimg.cc/CMDNQg3X/imagem-2024-01-21-154736137.png",
 		urlRepo: "https://github.com/oliveiradonai/dt-money",
-	},
-	{
-		id: "c168ad0f-f1d2-425d-b228-780ad25f481f",
-		name: "Weather App",
-		description:
-			"In this project, inspired by the Windows Weather Forecast application, I aimed to create a web page that dynamically adapts to the weather conditions of the location selected by the user. Therefore, I developed this project using ReactJS and Typescript, consuming a free weather forecast data API provided by OpenWeather using the Axios HTTP client.",
-		urlProject: "https://adnfig-weather-app.vercel.app",
-		urlImage: "https://i.postimg.cc/Jz90gfVY/imagem-2024-01-21-154840076.png",
-		urlRepo: "https://github.com/oliveiradonai/weather-app",
+		technologies: [
+			"devicon-react-original",
+			"devicon-typescript-plain",
+			"devicon-figma-plain",
+			"devicon-sass-original",
+		],
 	},
 	{
 		id: "e8922e68-3792-42f5-8952-3b09b9e640f5",
@@ -43,6 +65,7 @@ const projectsList = [
 		urlProject: "https://adnfig-movieflix.vercel.app",
 		urlImage: "https://i.postimg.cc/dVWpVFtn/imagem-2024-01-21-155144806.png",
 		urlRepo: "https://github.com/oliveiradonai/netflix-clone",
+		technologies: ["devicon-react-original", "devicon-css3-plain-wordmark"],
 	},
 	{
 		id: "783bcf12-d500-49ab-9a61-6948915b9adc",
@@ -52,6 +75,10 @@ const projectsList = [
 		urlProject: "https://adnfig-neon-button.vercel.app",
 		urlImage: "https://i.postimg.cc/KzhNZpLJ/imagem-2024-01-21-155235903.png",
 		urlRepo: "https://adnfig-neon-button.vercel.app",
+		technologies: [
+			"devicon-html5-plain-wordmark",
+			"devicon-css3-plain-wordmark",
+		],
 	},
 	{
 		id: "81d68ae6-986b-43d7-9a73-ed0d66418e8f",
@@ -61,6 +88,10 @@ const projectsList = [
 		urlProject: "https://adnfig-one-page.vercel.app",
 		urlImage: "https://i.postimg.cc/0ypjTtk8/imagem-2024-01-21-155348223.png",
 		urlRepo: "https://github.com/oliveiradonai/one-page-institutional",
+		technologies: [
+			"devicon-html5-plain-wordmark",
+			"devicon-css3-plain-wordmark",
+		],
 	},
 	{
 		id: "579f597a-cfc1-423f-be63-de7a89f6ddb5",
@@ -70,6 +101,10 @@ const projectsList = [
 		urlProject: "https://adnfig-responsive-audio.vercel.app",
 		urlImage: "https://i.postimg.cc/Rh7Ckhmg/imagem-2024-01-21-155459440.png",
 		urlRepo: "https://github.com/oliveiradonai/audio-responsive",
+		technologies: [
+			"devicon-html5-plain-wordmark",
+			"devicon-css3-plain-wordmark",
+		],
 	},
 ];
 

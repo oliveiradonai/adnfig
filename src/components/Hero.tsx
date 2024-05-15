@@ -2,6 +2,7 @@ import Image from "next/image";
 import Profile from "../../public/profile.png";
 import { GetMyAge } from "../helpers/DateHelpers";
 import { Technologies } from "./Technologies";
+import { Suspense } from "react";
 
 export function Hero() {
 	const myAge = GetMyAge().toString() || "some";
@@ -20,13 +21,17 @@ export function Hero() {
 						boost my skills and keep up with the latest in tech.
 					</div>
 				</div>
-				<img
+				<Image
+					width={350}
+					height={350}
 					className="max-w-[200px] sm:max-w-[350px]"
 					src="https://i.postimg.cc/Bnb4sFKD/image.png"
 					alt="Adonai's selfie"
 				/>
 			</div>
-			<Technologies />
+			<Suspense fallback={<h1>Carregando...</h1>}>
+				<Technologies />
+			</Suspense>
 			<div className="mt-10 text-base text-gray-500">
 				Some technologies I've worked with.
 			</div>
