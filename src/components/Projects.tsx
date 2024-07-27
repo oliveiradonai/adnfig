@@ -47,7 +47,7 @@ export function Projects() {
 									backgroundImage: `url(${project.urlImage})`,
 								}}
 							>
-								<div className="h-[350px] sm:h-[500px] flex items-start justify-center flex-col rounded-md px-16 text-xl opacity-0 hover:opacity-100 active:opacity-100 hover:bg-black active:bg-black hover:bg-opacity-80 active:bg-opacity-80 transition ease-in">
+								<div className="h-[350px] sm:h-[500px] flex items-start justify-center flex-col rounded-md px-8 sm:px-16 text-xl opacity-0 hover:opacity-100 active:opacity-100 hover:bg-black active:bg-black hover:bg-opacity-80 active:bg-opacity-80 transition ease-in">
 									<span className="text-xl sm:text-2xl text-brand font-bold">
 										About the project:
 									</span>

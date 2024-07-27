@@ -28,6 +28,19 @@ export function About() {
 						<div className="col-span-12 space-y-12 relative sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:dark:bg-gray-700">
 							<div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-brand">
 								<h3 className="text-xl font-semibold tracki">
+									ENOQ Bank — Front-end Developer
+								</h3>
+								<time className="text-xs tracki uppercase dark:text-gray-400">
+									JULY 2024 UNTIL NOW
+								</time>
+								<p className="mt-3">
+									As a front-end developer, I am responsible for designing and
+									developing the user interface of a digital banking application
+									using ReactJS and TypeScript.
+								</p>
+							</div>
+							<div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-brand">
+								<h3 className="text-xl font-semibold tracki">
 									Entrada Segura — Front-end Developer
 								</h3>
 								<time className="text-xs tracki uppercase dark:text-gray-400">
@@ -44,13 +57,12 @@ export function About() {
 									TCL Soluções — Full Stack Developer
 								</h3>
 								<time className="text-xs tracki uppercase dark:text-gray-400">
-									NOVEMBER 2021 UNTIL NOW
+									NOVEMBER 2021 - JUNE 2024
 								</time>
 								<p className="mt-3">
-									I am currently working as a Full Stack Developer, with ReactJS
-									+ Typescript, HTML + CSS + JavaScript, C# .Net Core,
-									maintaining solutions and making new ones with modern
-									interfaces.
+									I worked as a Full Stack Developer, with ReactJS + Typescript,
+									HTML + CSS + JavaScript, C# .Net Core, maintaining solutions
+									and making new ones with modern interfaces.
 								</p>
 							</div>
 							<div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-brand">
@@ -89,12 +101,12 @@ export function About() {
 				<p className="flex flex-col">
 					<span className="font-bold">Front-end:</span>
 					<span className="font-light">
-						UI/UX | JavaScriptES6+ | ReactJS | NextJS | HTML and CSS
+						UI/UX | ReactJS | NextJS | TailwindCSS | TypeScript
 					</span>
 				</p>
 				<p className="flex flex-col">
 					<span className="font-bold">Back-end:</span>
-					<span className="font-light">NodeJS | C# .Net Core</span>
+					<span className="font-light">NodeJS | .Net Core</span>
 				</p>
 				<p className="flex flex-col">
 					<span className="font-bold">DevOps:</span>
