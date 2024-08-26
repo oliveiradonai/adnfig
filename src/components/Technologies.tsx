@@ -56,21 +56,6 @@ export function Technologies() {
 						<i className="devicon-git-plain-wordmark" />
 						<i className="devicon-graphql-plain-wordmark" />
 						<i className="devicon-jest-plain" />
-						<i className="devicon-react-original" />
-						<i className="devicon-nextjs-original-wordmark" />
-						<i className="devicon-typescript-plain" />
-						<i className="devicon-tailwindcss-original-wordmark" />
-						<i className="devicon-nodejs-plain-wordmark" />
-						<i className="devicon-figma-plain" />
-						<i className="devicon-sass-original" />
-						<i className="devicon-dotnetcore-plain" />
-						<i className="devicon-html5-plain-wordmark" />
-						<i className="devicon-css3-plain-wordmark" />
-						<i className="devicon-bootstrap-plain-wordmark" />
-						<i className="devicon-docker-plain-wordmark" />
-						<i className="devicon-git-plain-wordmark" />
-						<i className="devicon-graphql-plain-wordmark" />
-						<i className="devicon-jest-plain" />
 					</>
 				)}
 			</div>
