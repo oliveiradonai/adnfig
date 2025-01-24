@@ -51,7 +51,7 @@ export default function RootLayout({
 				/>
 				<meta
 					property="og:image"
-					content="https://i.postimg.cc/RFV3N3bj/meta-img.jpg"
+					content="https://i.postimg.cc/XXMvYmL2/imagem-2024-01-21-220018065.png"
 				/>
 
 				<meta name="twitter:card" content="summary_large_image" />
@@ -64,7 +64,7 @@ export default function RootLayout({
 				/>
 				<meta
 					name="twitter:image"
-					content="https://i.postimg.cc/RFV3N3bj/meta-img.jpg"
+					content="https://i.postimg.cc/XXMvYmL2/imagem-2024-01-21-220018065.png"
 				/>
 			</head>
 			<body>
