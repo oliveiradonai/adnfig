@@ -1,5 +1,3 @@
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
@@ -51,7 +49,7 @@ export default function RootLayout({
 				/>
 				<meta
 					property="og:image"
-					content="https://i.postimg.cc/XXMvYmL2/imagem-2024-01-21-220018065.png"
+					content="https://i.postimg.cc/9F6drq2k/imagem-2024-01-21-220018065.webp"
 				/>
 
 				<meta name="twitter:card" content="summary_large_image" />
@@ -64,13 +62,11 @@ export default function RootLayout({
 				/>
 				<meta
 					name="twitter:image"
-					content="https://i.postimg.cc/XXMvYmL2/imagem-2024-01-21-220018065.png"
+					content="https://i.postimg.cc/9F6drq2k/imagem-2024-01-21-220018065.webp"
 				/>
 			</head>
 			<body>
 				{children}
-				<Analytics />
-				<SpeedInsights />
 			</body>
 		</html>
 	);

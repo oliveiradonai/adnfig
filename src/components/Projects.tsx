@@ -3,6 +3,7 @@ import projectsList from "@/projects";
 import { ArrowSquareOut, GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import Image from "next/image";
 import { useState } from "react";
 
 export function Projects() {
@@ -41,13 +42,16 @@ export function Projects() {
 							<div className="text-3xl mainText font-semibold uppercase">
 								{project.name}
 							</div>
-							<div
-								className="w-auto h-[350px] sm:w-[1120px] sm:h-[500px] rounded-md object-cover bg-no-repeat bg-cover bg-center"
-								style={{
-									backgroundImage: `url(${project.urlImage})`,
-								}}
-							>
-								<div className="h-[350px] sm:h-[500px] flex items-start justify-center flex-col rounded-md px-8 sm:px-16 text-xl opacity-0 hover:opacity-100 active:opacity-100 hover:bg-black active:bg-black hover:bg-opacity-80 active:bg-opacity-80 transition ease-in">
+							<div className="relative h-[350px] sm:w-[1120px] sm:h-[500px]">
+								<Image
+									className="w-auto h-full rounded-md object-cover absolute top-0 left-0"
+									src={project.urlImage}
+									alt={project.name}
+									width={0}
+									height={0}
+									sizes="100vw"
+								/>
+								<div className="absolute w-fit h-full flex items-start justify-center flex-col rounded-md px-8 sm:px-16 text-xl opacity-0 hover:opacity-100 active:opacity-100 hover:bg-black active:bg-black hover:bg-opacity-80 active:bg-opacity-80 transition ease-in">
 									<span className="text-xl sm:text-2xl text-brand font-bold">
 										About the project:
 									</span>
