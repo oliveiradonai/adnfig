@@ -66,9 +66,7 @@ export async function generateMetadata({
 			card: "summary_large_image",
 			title: dictionary.metadata.title,
 			description: dictionary.metadata.description,
-			images: [
-				"https://i.postimg.cc/BvYVYxr9/og-img.webp",
-			],
+			images: ["https://i.postimg.cc/BvYVYxr9/og-img.webp"],
 		},
 	};
 }
