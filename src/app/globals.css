@@ -1,83 +1,83 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+	--color-brand: #e54b4b;
+	--font-sans: var(--font-poppins);
+	--font-display: var(--font-montserrat);
+}
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
-}
-
-@media (max-width: 1080px) {
-  html {
-    font-size: 93.75%;
-  }
-}
-
-@media (max-width: 720px) {
-  html {
-    font-size: 87.5%;
-  }
+	box-sizing: border-box;
 }
 
 html {
-  font-family: var(--font-poppins) !important;
-  scroll-behavior: smooth;
-}
-
-a {
-  text-decoration: none;
+	scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+	min-height: 100vh;
+	background:
+		radial-gradient(
+			circle at top left,
+			rgba(229, 75, 75, 0.16),
+			transparent 32rem
+		),
+		#000;
+	color: #fff;
+	font-family: var(--font-poppins), sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+a {
+	text-decoration: none;
+}
+
+button,
+a {
+	-webkit-tap-highlight-color: transparent;
 }
 
 .mainText {
-  font-family: var(--font-montserrat);
+	font-family: var(--font-montserrat), sans-serif;
 }
 
-[data-animated="true"] {
-  -webkit-mask: linear-gradient(90deg, transparent, #FFFFFF 20% 80%, transparent);
-  mask: linear-gradient(90deg, transparent, #FFFFFF 20% 80%, transparent);
+.tech-marquee {
+	mask: linear-gradient(90deg, transparent, #fff 10% 90%, transparent);
 }
 
-.dots {
-  display: flex;
-  padding: 10px 0;
-  justify-content: center;
+.tech-marquee-track {
+	animation: tech-scroll 28s linear infinite;
 }
 
-.dot {
-  border: none;
-  width: 10px;
-  height: 10px;
-  background: #c5c5c5;
-  border-radius: 50%;
-  margin: 0 5px;
-  padding: 5px;
-  cursor: pointer;
+@keyframes tech-scroll {
+	to {
+		transform: translate3d(calc(-50% - 1.5rem), 0, 0);
+	}
 }
 
-.dot:focus {
-  outline: none;
+@media (hover: hover) and (pointer: fine) {
+	a:hover,
+	button:hover {
+		cursor: pointer;
+	}
 }
 
-.dot.active {
-  background: #e54b4b;
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	::before,
+	::after {
+		animation-duration: 1ms;
+		animation-iteration-count: 1;
+		scroll-behavior: auto;
+		transition-duration: 1ms;
+	}
+
+	.tech-marquee-track {
+		animation: none;
+		flex-wrap: wrap;
+		width: auto;
+	}
 }

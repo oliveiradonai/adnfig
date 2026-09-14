@@ -1,123 +1,57 @@
-"use client";
 import projectsList from "@/projects";
-import { ArrowSquareOut, GithubLogo } from "@phosphor-icons/react/dist/ssr";
-import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
-import Image from "next/image";
-import { useState } from "react";
+import { ProjectCarousel } from "./project-carousel";
 
-export function Projects() {
-	const [currentSlide, setCurrentSlide] = useState<number>(0);
-	const [loaded, setLoaded] = useState<boolean>(false);
+type ProjectsProps = {
+	content: {
+		eyebrow: string;
+		title: string;
+		description: string;
+		caseStudy: string;
+		repository: (project: string) => string;
+		liveProject: (project: string) => string;
+		previous: string;
+		next: string;
+		slides: string;
+		showProject: (project: string) => string;
+		descriptions: Record<string, string>;
+	};
+};
 
-	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-		initial: 0,
-		loop: true,
-		slideChanged(slider) {
-			setCurrentSlide(slider.track.details.rel);
-		},
-		created() {
-			setLoaded(true);
-		},
-		slides: {
-			spacing: 15,
-		},
-	});
+export function Projects({ content }: ProjectsProps) {
+	const localizedProjects = projectsList.map((project) => ({
+		...project,
+		description: content.descriptions[project.id] ?? project.description,
+		liveProjectLabel: content.liveProject(project.name),
+		repositoryLabel: content.repository(project.name),
+		showLabel: content.showProject(project.name),
+	}));
 
 	return (
-		<div className="w-full px-8 sm:p-0 sm:max-w-[1120px] my-0 mx-auto min-h-[100vh] flex items-center justify-center flex-col">
-			<div className="text-4xl font-bold mainText text-brand">My projects</div>
-			<div className="text-lg text-center text-gray-400 mt-8 max-w-[650px]">
-				Take a peek at some of the projects I created during my development
-				career. You can click/hover on project to see a brief description 😉.
+		<section
+			id="projects"
+			className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-24 sm:px-8"
+		>
+			<div className="max-w-3xl">
+				<p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+					{content.eyebrow}
+				</p>
+				<h2 className="mainText mt-4 text-4xl font-bold text-white sm:text-6xl">
+					{content.title}
+				</h2>
+				<p className="mt-6 text-base leading-8 text-neutral-300 sm:text-lg">
+					{content.description}
+				</p>
 			</div>
 
-			<div ref={sliderRef} className="keen-slider mt-8">
-				{projectsList.map((project) => {
-					return (
-						<div
-							key={project.id}
-							className="keen-slider__slide flex flex-col items-center justify-center gap-8"
-						>
-							<div className="text-3xl mainText font-semibold uppercase">
-								{project.name}
-							</div>
-							<div className="relative h-[350px] sm:w-[1120px] sm:h-[500px]">
-								<Image
-									className="w-auto h-full rounded-md object-cover absolute top-0 left-0"
-									src={project.urlImage}
-									alt={project.name}
-									width={0}
-									height={0}
-									sizes="100vw"
-								/>
-								<div className="absolute w-fit h-full flex items-start justify-center flex-col rounded-md px-8 sm:px-16 text-xl opacity-0 hover:opacity-100 active:opacity-100 hover:bg-black active:bg-black hover:bg-opacity-80 active:bg-opacity-80 transition ease-in">
-									<span className="text-xl sm:text-2xl text-brand font-bold">
-										About the project:
-									</span>
-									<p className="text-base sm:text-lg">{project.description}</p>
-
-									<div className="flex items-center w-full gap-6 mt-4 text-5xl">
-										{project.technologies.map((technology) => {
-											return (
-												<i
-													key={`${project.id}_${technology}`}
-													className={`${technology} text-brand`}
-												/>
-											);
-										})}
-									</div>
-								</div>
-							</div>
-							<div className="flex flex-row items-center justify-center gap-8">
-								<a
-									href={project.urlRepo}
-									target="_blank"
-									rel="noopener noreferrer"
-									title="Open GitHub repository"
-								>
-									<GithubLogo
-										weight="fill"
-										size={40}
-										className="hover:text-brand transition ease-linear"
-									/>
-								</a>
-
-								<a
-									href={project.urlProject}
-									target="_blank"
-									rel="noopener noreferrer"
-									title="Open deployed demo"
-								>
-									<ArrowSquareOut
-										weight="fill"
-										size={40}
-										className="hover:text-brand transition ease-linear"
-									/>
-								</a>
-							</div>
-						</div>
-					);
-				})}
-			</div>
-			{loaded && instanceRef.current && (
-				<div className="dots mt-4">
-					{[
-						...Array(instanceRef.current.track.details.slides.length).keys(),
-					].map((idx) => {
-						return (
-							<button
-								type="button"
-								key={idx}
-								onClick={() => {
-									instanceRef.current?.moveToIdx(idx);
-								}}
-								className={`dot${currentSlide === idx ? " active" : ""}`}
-							/>
-						);
-					})}
-				</div>
-			)}
-		</div>
+			<ProjectCarousel
+				projects={localizedProjects}
+				content={{
+					caseStudy: content.caseStudy,
+					previous: content.previous,
+					next: content.next,
+					slides: content.slides,
+				}}
+			/>
+		</section>
 	);
 }

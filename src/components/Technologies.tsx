@@ -1,63 +1,43 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
+const technologies = [
+	"devicon-react-original",
+	"devicon-nextjs-original-wordmark",
+	"devicon-typescript-plain",
+	"devicon-tailwindcss-original-wordmark",
+	"devicon-nodejs-plain-wordmark",
+	"devicon-figma-plain",
+	"devicon-sass-original",
+	"devicon-dotnetcore-plain",
+	"devicon-html5-plain-wordmark",
+	"devicon-css3-plain-wordmark",
+	"devicon-bootstrap-plain-wordmark",
+	"devicon-docker-plain-wordmark",
+	"devicon-git-plain-wordmark",
+	"devicon-graphql-plain-wordmark",
+	"devicon-jest-plain",
+];
+
+const marqueeTechnologies = [
+	...technologies.map((technology) => ({
+		id: `first_${technology}`,
+		technology,
+	})),
+	...technologies.map((technology) => ({
+		id: `second_${technology}`,
+		technology,
+	})),
+];
 
 export function Technologies() {
-	const [loadedContent, setLoadedContent] = useState<boolean>(false);
-
-	const scrollRef = useRef<HTMLDivElement>(null);
-	const scrollInnerRef = useRef<HTMLDivElement>(null);
-
-	async function HandleScroll() {
-		if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-			scrollRef.current?.setAttribute("data-animated", "true");
-
-			if (scrollInnerRef.current) {
-				const scrollContent = Array.from(scrollInnerRef.current.children);
-
-				for (const item of scrollContent) {
-					if (item instanceof Element) {
-						const duplicatedItem = item.cloneNode(true) as Element;
-						duplicatedItem.setAttribute("aria-hidden", "true");
-						scrollInnerRef.current.appendChild(duplicatedItem);
-					}
-				}
-			}
-		}
-	}
-
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-	useEffect(() => {
-		HandleScroll().then(() => setLoadedContent(true));
-	}, []);
-
 	return (
-		<div
-			ref={scrollRef}
-			className="w-full px-8 sm:max-w-[1120px] mt-14 text-7xl data-[animated=true]:overflow-hidden group"
-		>
-			<div
-				ref={scrollInnerRef}
-				className="px-8 flex gap-16 flex-wrap group-data-[animated=true]:w-max group-data-[animated=true]:flex-nowrap group-data-[animated=true]:animate-scroll"
-			>
-				{loadedContent && (
-					<>
-						<i className="devicon-react-original" />
-						<i className="devicon-nextjs-original-wordmark" />
-						<i className="devicon-typescript-plain" />
-						<i className="devicon-tailwindcss-original-wordmark" />
-						<i className="devicon-nodejs-plain-wordmark" />
-						<i className="devicon-figma-plain" />
-						<i className="devicon-sass-original" />
-						<i className="devicon-dotnetcore-plain" />
-						<i className="devicon-html5-plain-wordmark" />
-						<i className="devicon-css3-plain-wordmark" />
-						<i className="devicon-bootstrap-plain-wordmark" />
-						<i className="devicon-docker-plain-wordmark" />
-						<i className="devicon-git-plain-wordmark" />
-						<i className="devicon-graphql-plain-wordmark" />
-						<i className="devicon-jest-plain" />
-					</>
-				)}
+		<div className="tech-marquee mt-12 w-full overflow-hidden">
+			<div className="tech-marquee-track flex w-max gap-12 text-6xl text-white/80 sm:text-7xl">
+				{marqueeTechnologies.map(({ id, technology }) => (
+					<i
+						key={id}
+						className={`${technology} transition-colors duration-200 hover:text-brand`}
+						aria-hidden="true"
+					/>
+				))}
 			</div>
 		</div>
 	);
