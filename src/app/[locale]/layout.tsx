@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 import { defaultLocale, getDictionary, isLocale } from "@/i18n";
+import { openGraphImage, siteUrl } from "@/lib/site-metadata";
 import "../globals.css";
 
 const poppins = Poppins({
@@ -32,7 +33,7 @@ export async function generateMetadata({
 	const dictionary = getDictionary(locale);
 
 	return {
-		metadataBase: new URL("https://adnfig.me"),
+		metadataBase: new URL(siteUrl),
 		title: {
 			default: dictionary.metadata.title,
 			template: "%s | Adonai Figueiredo",
@@ -51,22 +52,16 @@ export async function generateMetadata({
 		openGraph: {
 			type: "website",
 			url: `/${locale}`,
+			siteName: "Adonai Figueiredo",
 			title: dictionary.metadata.title,
 			description: dictionary.metadata.description,
-			images: [
-				{
-					url: "https://i.postimg.cc/BvYVYxr9/og-img.webp",
-					width: 1774,
-					height: 887,
-					alt: "Adonai Figueiredo portfolio preview",
-				},
-			],
+			images: [openGraphImage],
 		},
 		twitter: {
 			card: "summary_large_image",
 			title: dictionary.metadata.title,
 			description: dictionary.metadata.description,
-			images: ["https://i.postimg.cc/BvYVYxr9/og-img.webp"],
+			images: [openGraphImage.url],
 		},
 	};
 }

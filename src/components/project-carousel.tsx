@@ -28,12 +28,14 @@ type ProjectCarouselProps = {
 };
 
 const iconClassName =
-	"rounded-full border border-white/10 bg-white/5 p-3 text-white transition-[border-color,background-color,color,transform] duration-200 ease-out hover:border-brand hover:bg-brand hover:text-black active:scale-[0.97]";
+	"rounded-full border border-white/10 bg-white/5 p-3 text-white transition-[border-color,background-color,color,transform] duration-150 ease-[var(--ease-out)] hover:border-brand hover:bg-brand hover:text-black active:scale-[0.97]";
 
 export function ProjectCarousel({ projects, content }: ProjectCarouselProps) {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const projectCount = projects.length;
 	const activeProject = projects[activeIndex];
+	const previousIndex = activeIndex === 0 ? projectCount - 1 : activeIndex - 1;
+	const nextIndex = activeIndex === projectCount - 1 ? 0 : activeIndex + 1;
 
 	const slideStyle = useMemo(
 		() => ({ transform: `translate3d(-${activeIndex * 100}%, 0, 0)` }),
@@ -64,7 +66,7 @@ export function ProjectCarousel({ projects, content }: ProjectCarouselProps) {
 		<div className="mt-12">
 			<div className="overflow-hidden rounded-lg border border-white/10 bg-neutral-950 shadow-2xl shadow-brand/10">
 				<div
-					className="flex will-change-transform transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none"
+					className="flex will-change-transform transition-transform duration-[250ms] ease-[var(--ease-in-out)] motion-reduce:transition-none"
 					style={slideStyle}
 				>
 					{projects.map((project, index) => (
@@ -73,6 +75,11 @@ export function ProjectCarousel({ projects, content }: ProjectCarouselProps) {
 							project={project}
 							caseStudy={content.caseStudy}
 							priority={index === 0}
+							shouldLoadImage={
+								index === activeIndex ||
+								index === previousIndex ||
+								index === nextIndex
+							}
 						/>
 					))}
 				</div>
@@ -140,10 +147,18 @@ export function ProjectCarousel({ projects, content }: ProjectCarouselProps) {
 						aria-label={project.showLabel}
 						aria-current={activeIndex === index ? "true" : undefined}
 						className={cn(
-							"h-2.5 flex-1 rounded-full transition-[background-color,transform] duration-200 ease-out hover:bg-white/30 active:scale-[0.98]",
-							activeIndex === index ? "bg-brand" : "bg-white/10",
+							"group h-2.5 flex-1 rounded-full bg-white/10 p-[3px] transition-transform duration-150 ease-[var(--ease-out)] active:scale-[0.98]",
 						)}
-					/>
+					>
+						<span
+							className={cn(
+								"block h-full origin-left rounded-full transition-[background-color,transform] duration-150 ease-[var(--ease-out)]",
+								activeIndex === index
+									? "scale-x-100 bg-brand"
+									: "scale-x-0 bg-brand group-hover:scale-x-100",
+							)}
+						/>
+					</button>
 				))}
 			</nav>
 		</div>
@@ -154,30 +169,37 @@ const ProjectSlide = memo(function ProjectSlide({
 	project,
 	caseStudy,
 	priority,
+	shouldLoadImage,
 }: {
 	project: Project;
 	caseStudy: string;
 	priority: boolean;
+	shouldLoadImage: boolean;
 }) {
 	return (
-		<article className="grid min-w-full bg-neutral-950 lg:grid-cols-[1.25fr_0.75fr]">
-			<div className="relative aspect-[16/10] min-h-[280px] overflow-hidden lg:min-h-[520px]">
-				<Image
-					src={project.urlImage}
-					alt={`${project.name} screenshot`}
-					fill
-					priority={priority}
-					sizes="(max-width: 1024px) 100vw, 720px"
-					className="object-cover"
-				/>
+		<article className="grid w-full shrink-0 bg-neutral-950 lg:grid-cols-[minmax(0,1.12fr)_minmax(320px,0.88fr)]">
+			<div className="relative min-h-[260px] min-w-0 overflow-hidden sm:min-h-[340px] lg:h-full lg:min-h-0">
+				{shouldLoadImage ? (
+					<Image
+						src={project.urlImage}
+						alt={`${project.name} screenshot`}
+						fill
+						priority={priority}
+						unoptimized
+						sizes="(max-width: 1024px) 100vw, 680px"
+						className="object-cover"
+					/>
+				) : (
+					<div className="h-full w-full bg-neutral-900" aria-hidden="true" />
+				)}
 			</div>
 
-			<div className="flex flex-col justify-between gap-10 p-6 sm:p-8 lg:p-10">
+			<div className="min-w-0 border-t border-white/10 p-6 sm:p-8 lg:flex lg:flex-col lg:justify-between lg:gap-10 lg:border-l lg:border-t-0 lg:p-10">
 				<div>
 					<p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
 						{caseStudy}
 					</p>
-					<h3 className="mainText mt-4 text-3xl font-bold text-white">
+					<h3 className="mainText mt-4 text-2xl font-bold text-white sm:text-3xl">
 						{project.name}
 					</h3>
 					<p className="mt-5 text-base leading-8 text-neutral-300">
@@ -185,7 +207,7 @@ const ProjectSlide = memo(function ProjectSlide({
 					</p>
 				</div>
 
-				<ul className="flex flex-wrap gap-3 text-4xl text-brand">
+				<ul className="mt-8 flex flex-wrap gap-3 text-4xl text-brand lg:mt-0">
 					{project.technologies.map((technology) => (
 						<li key={`${project.id}_${technology}`} className="leading-none">
 							<i className={technology} aria-hidden="true" />

@@ -15,7 +15,7 @@ const projectsList: Project[] = [
 		description:
 			"A weather dashboard inspired by Windows Weather. It adapts the page to the selected city's conditions and consumes OpenWeather data with React and TypeScript.",
 		urlProject: "https://adnfig-weather-app.vercel.app",
-		urlImage: "https://i.postimg.cc/Jz90gfVY/imagem-2024-01-21-154840076.png",
+		urlImage: "/weather-app.webp",
 		urlRepo: "https://github.com/oliveiradonai/weather-app",
 		technologies: [
 			"devicon-react-original",
@@ -29,7 +29,7 @@ const projectsList: Project[] = [
 		description:
 			"A TypeScript React feed built during Rocketseat's Ignite program, focused on component structure, state updates, and publication interactions.",
 		urlProject: "https://adnfig-ignite-feed.vercel.app",
-		urlImage: "https://i.postimg.cc/mrbNc1hG/imagem-2024-01-21-154627829.png",
+		urlImage: "/ignite-feed.webp",
 		urlRepo: "https://github.com/oliveiradonai/01-fundamentos-reactjs-ts",
 		technologies: [
 			"devicon-react-original",
@@ -43,7 +43,7 @@ const projectsList: Project[] = [
 		description:
 			"An end-to-end habit tracker built during NLW Ignite. The interface turns daily progress into a contribution-style grid backed by a Node API.",
 		urlProject: "https://adnfig-habits.vercel.app",
-		urlImage: "https://i.postimg.cc/bNc6yJ0q/imagem-2024-01-21-154705348.png",
+		urlImage: "/habits.webp",
 		urlRepo: "https://github.com/oliveiradonai/nlw-habits-web",
 		technologies: [
 			"devicon-react-original",
@@ -58,7 +58,7 @@ const projectsList: Project[] = [
 		description:
 			"A finance dashboard for tracking income, expenses, and totals. I used MirageJS to model API behavior while building the React and Sass interface.",
 		urlProject: "https://adnfig-dt-money.vercel.app",
-		urlImage: "https://i.postimg.cc/CMDNQg3X/imagem-2024-01-21-154736137.png",
+		urlImage: "/dt-money.webp",
 		urlRepo: "https://github.com/oliveiradonai/dt-money",
 		technologies: [
 			"devicon-react-original",
@@ -73,7 +73,7 @@ const projectsList: Project[] = [
 		description:
 			"My first React project: a Netflix-style catalog powered by The Movie Database API, with featured titles, recommendations, and genre sections.",
 		urlProject: "https://adnfig-movieflix.vercel.app",
-		urlImage: "https://i.postimg.cc/dVWpVFtn/imagem-2024-01-21-155144806.png",
+		urlImage: "/movieflix.webp",
 		urlRepo: "https://github.com/oliveiradonai/netflix-clone",
 		technologies: ["devicon-react-original", "devicon-css3-plain-wordmark"],
 	},
@@ -83,8 +83,8 @@ const projectsList: Project[] = [
 		description:
 			"A focused CSS study for neon button styling, hover feedback, and visual polish without JavaScript.",
 		urlProject: "https://adnfig-neon-button.vercel.app",
-		urlImage: "https://i.postimg.cc/KzhNZpLJ/imagem-2024-01-21-155235903.png",
-		urlRepo: "https://adnfig-neon-button.vercel.app",
+		urlImage: "/neon-button.webp",
+		urlRepo: "https://github.com/oliveiradonai/neon-button",
 		technologies: [
 			"devicon-html5-plain-wordmark",
 			"devicon-css3-plain-wordmark",
@@ -96,7 +96,7 @@ const projectsList: Project[] = [
 		description:
 			"A one-day technical challenge for an institutional landing page with company content, workplace highlights, news, and contact sections.",
 		urlProject: "https://adnfig-one-page.vercel.app",
-		urlImage: "https://i.postimg.cc/0ypjTtk8/imagem-2024-01-21-155348223.png",
+		urlImage: "/one-page.webp",
 		urlRepo: "https://github.com/oliveiradonai/one-page-institutional",
 		technologies: [
 			"devicon-html5-plain-wordmark",
@@ -109,7 +109,7 @@ const projectsList: Project[] = [
 		description:
 			"A college project that reads a local MP3 file and renders an audio visualizer from frequency data. It targets desktop interactions.",
 		urlProject: "https://adnfig-responsive-audio.vercel.app",
-		urlImage: "https://i.postimg.cc/Rh7Ckhmg/imagem-2024-01-21-155459440.png",
+		urlImage: "/responsive-audio.webp",
 		urlRepo: "https://github.com/oliveiradonai/audio-responsive",
 		technologies: [
 			"devicon-html5-plain-wordmark",

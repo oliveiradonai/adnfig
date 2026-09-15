@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
+import { openGraphImage, siteUrl } from "@/lib/site-metadata";
 import "../globals.css";
 
 const poppins = Poppins({
@@ -17,11 +18,36 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://adnfig.me"),
+	metadataBase: new URL(siteUrl),
 	title: "Adonai Figueiredo | Desenvolvedor Front-end",
 	description:
 		"Desenvolvedor front-end com mais de 8 anos em software, do atendimento ao cliente ao código, criando interfaces com React, Next.js e TypeScript.",
+	authors: [{ name: "Adonai Figueiredo" }],
 	robots: "index, follow",
+	alternates: {
+		canonical: "/",
+		languages: {
+			"pt-BR": "/pt-BR",
+			"en-US": "/en-US",
+		},
+	},
+	openGraph: {
+		type: "website",
+		url: "/",
+		siteName: "Adonai Figueiredo",
+		title: "Adonai Figueiredo | Desenvolvedor Front-end",
+		description:
+			"Desenvolvedor front-end com mais de 8 anos em software, criando interfaces com React, Next.js e TypeScript.",
+		locale: "pt_BR",
+		images: [openGraphImage],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Adonai Figueiredo | Desenvolvedor Front-end",
+		description:
+			"Desenvolvedor front-end com mais de 8 anos em software, criando interfaces com React, Next.js e TypeScript.",
+		images: [openGraphImage.url],
+	},
 };
 
 export default function RedirectLayout({

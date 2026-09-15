@@ -29,6 +29,7 @@ type Dictionary = {
 		projects: string;
 		trajectory: string;
 		switchLocale: string;
+		currentLocale: string;
 	};
 	hero: {
 		eyebrow: string;
@@ -76,12 +77,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
 		header: {
 			projects: "Projetos",
 			trajectory: "Trajetória",
-			switchLocale: "English",
+			switchLocale: "Switch to English",
+			currentLocale: "Português do Brasil",
 		},
 		hero: {
 			eyebrow: "Desenvolvedor front-end",
 			description:
-				"Oi, eu sou o Adonai. Crio interfaces com React, Next.js e TypeScript para produtos financeiros, plataformas White Label e sistemas que precisam funcionar bem no dia a dia.",
+				"👋 Hey. Sou engenheiro de software, com mais de 8 anos de experiência construindo soluções para os setores financeiro, bancário, pagamentos e ERPs.",
 			experience: "8+ anos em software",
 			stack: "React + Next.js + TypeScript",
 			languages: "Português + inglês",
@@ -91,7 +93,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 				"Tecnologias que uso para criar interfaces de produto e soluções full-stack.",
 		},
 		projects: {
-			eyebrow: "Projetos selecionados",
+			eyebrow: "Meus projetos",
 			title: "Projetos que mostram prática, cuidado com interface e entrega.",
 			description:
 				"Alguns trabalhos, estudos e experimentos que me ajudaram a evoluir em React, TypeScript, consumo de APIs, organização de UI e manutenção de código.",
@@ -118,7 +120,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 				"81d68ae6-986b-43d7-9a73-ed0d66418e8f":
 					"Um teste técnico de um dia para uma landing page institucional com conteúdo da empresa, ambiente de trabalho, notícias e contato.",
 				"579f597a-cfc1-423f-be63-de7a89f6ddb5":
-					"Um projeto de faculdade que lê um arquivo MP3 local e renderiza um visualizador de áudio a partir das frequências. O foco é desktop.",
+					"Um projeto de faculdade que lê um arquivo MP3 local e renderiza um visualizador de áudio a partir das frequências.",
 			},
 		},
 		about: {
@@ -127,10 +129,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			description:
 				"Tenho mais de 8 anos em software, passando por suporte, implantação, desenvolvimento full-stack e front-end. Essa mistura me ajuda a pensar além da tela: entendo regras de negócio, converso com áreas diferentes e transformo fluxos complexos em interfaces mais claras.",
 			skills: [
-				["Front-end", "React, Next.js, JavaScript ES6+, HTML, CSS, UI/UX"],
+				["Front-end", "React, Next.js, Tailwind CSS, UI/UX"],
 				["Back-end", "Node.js, C# .NET Core"],
-				["Delivery", "CI/CD com Azure, Git, code review, manutenção"],
-				["Produto", "Internet banking, pagamentos, ERP, controle de acesso"],
+				["DevOps", "CI/CD com Azure, Git, code review"],
+				["Produto", "Internet banking, pagamentos, ERP"],
 				["Idiomas", "Português, inglês"],
 			],
 			timeline: [
@@ -186,12 +188,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
 		header: {
 			projects: "Projects",
 			trajectory: "Journey",
-			switchLocale: "Português",
+			switchLocale: "Mudar para português",
+			currentLocale: "United States English",
 		},
 		hero: {
 			eyebrow: "Front-end developer",
 			description:
-				"Hi, I'm Adonai. I build React, Next.js, and TypeScript interfaces for financial products, White Label platforms, and systems people rely on every day.",
+				"👋 Hey. I'm a software engineer with 8+ years of experience building solutions for finances, banking, payment methods and ERP.",
 			experience: "8+ years in software",
 			stack: "React + Next.js + TypeScript",
 			languages: "Portuguese + English",
@@ -201,7 +204,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 				"Technologies I use to build product interfaces and full-stack solutions.",
 		},
 		projects: {
-			eyebrow: "Selected work",
+			eyebrow: "My projects",
 			title: "Projects that show practice, interface care, and delivery.",
 			description:
 				"A few production projects, studies, and experiments that helped me grow in React, TypeScript, API consumption, UI organization, and maintainable code.",
@@ -216,7 +219,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 				"c168ad0f-f1d2-425d-b228-780ad25f481f":
 					"A weather dashboard inspired by Windows Weather. It adapts the page to the selected city and consumes OpenWeather data with React and TypeScript.",
 				"487a92c6-c181-4301-a2f0-7c9ab698dd62":
-					"A React and TypeScript feed built during Rocketseat's Ignite program, focused on components, state, and publication interactions.",
+					"A React and TypeScript feed built during Rocketseat's Ignite program, focused on components, state, and post interactions.",
 				"5f43af86-2c87-46cb-99d8-8a23489d7b7d":
 					"An end-to-end habit tracker built during NLW Ignite. The interface turns daily progress into a tracking grid backed by a Node API.",
 				"98f29dc9-bd5b-4a4f-b402-fbf699bf9345":
@@ -228,7 +231,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 				"81d68ae6-986b-43d7-9a73-ed0d66418e8f":
 					"A one-day technical challenge for an institutional landing page with company content, workplace highlights, news, and contact sections.",
 				"579f597a-cfc1-423f-be63-de7a89f6ddb5":
-					"A college project that reads a local MP3 file and renders an audio visualizer from frequency data. It targets desktop interactions.",
+					"A college project that reads a local MP3 file and renders an audio visualizer from frequency data.",
 			},
 		},
 		about: {
@@ -237,10 +240,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
 			description:
 				"I have 8+ years in software across support, implementation, full-stack development, and front-end engineering. That mix helps me see more than the screen: I understand business rules, work with different teams, and turn complex flows into clearer interfaces.",
 			skills: [
-				["Front-end", "React, Next.js, JavaScript ES6+, HTML, CSS, UI/UX"],
+				["Front-end", "React, Next.js, Tailwind CSS, UI/UX"],
 				["Back-end", "Node.js, C# .NET Core"],
-				["Delivery", "Azure CI/CD, Git, code review, maintenance"],
-				["Product", "Internet banking, payments, ERP, access control"],
+				["DevOps", "Azure CI/CD, Git, code review"],
+				["Product", "Internet banking, payments, ERP"],
 				["Languages", "Portuguese, English"],
 			],
 			timeline: [
@@ -249,7 +252,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 					role: "Front-end Developer",
 					period: "July 2024 to present",
 					description:
-						"I lead front-end development for White Label internet banking and payment platforms with React, Next.js, and TypeScript. I also work with banking integrations such as Pix, TED, bank slip issuance and payments, with attention to security and PCI DSS.",
+						"I lead front-end development for White Label internet banking and payment platforms with React, Next.js, and TypeScript. I also work with banking integrations such as Pix, TED, bank slip issuance and payments, attending to security and PCI DSS standards.",
 				},
 				{
 					company: "Entrada Segura",
@@ -263,7 +266,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
 					role: "Full Stack Developer",
 					period: "November 2021 to June 2024",
 					description:
-						"I developed and maintained financial systems, acquirer solutions, receivables advance flows, and an auto repair ERP covering inventory, finance, invoicing, and service orders.",
+						"I developed and maintained financial systems, acquirer solutions, receivables advance flows, and a mechanical ERP covering inventory, finance, invoicing, and service orders.",
 				},
 				{
 					company: "Gesagri Software LTDA",

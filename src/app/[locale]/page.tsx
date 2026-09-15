@@ -6,6 +6,7 @@ import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Projects } from "@/components/projects";
 import { getDictionary, isLocale, type Locale, locales } from "@/i18n";
+import { openGraphImage } from "@/lib/site-metadata";
 
 type PageProps = {
 	params: Promise<{
@@ -41,17 +42,22 @@ export async function generateMetadata({
 			},
 		},
 		openGraph: {
+			type: "website",
 			title: dictionary.metadata.title,
 			description: dictionary.metadata.description,
-			locale,
-			alternateLocale: locales.filter(
-				(availableLocale) => availableLocale !== locale,
-			),
+			siteName: "Adonai Figueiredo",
+			locale: locale.replace("-", "_"),
+			alternateLocale: locales
+				.filter((availableLocale) => availableLocale !== locale)
+				.map((availableLocale) => availableLocale.replace("-", "_")),
 			url: `/${locale}`,
+			images: [openGraphImage],
 		},
 		twitter: {
+			card: "summary_large_image",
 			title: dictionary.metadata.title,
 			description: dictionary.metadata.description,
+			images: [openGraphImage.url],
 		},
 	};
 }

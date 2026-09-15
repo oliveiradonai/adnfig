@@ -1,5 +1,6 @@
 import projectsList from "@/projects";
 import { ProjectCarousel } from "./project-carousel";
+import { ScrollReveal } from "./scroll-reveal";
 
 type ProjectsProps = {
 	content: {
@@ -29,9 +30,9 @@ export function Projects({ content }: ProjectsProps) {
 	return (
 		<section
 			id="projects"
-			className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-24 sm:px-8"
+			className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-16 sm:px-8 sm:py-24"
 		>
-			<div className="max-w-3xl">
+			<ScrollReveal className="max-w-3xl">
 				<p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
 					{content.eyebrow}
 				</p>
@@ -41,17 +42,19 @@ export function Projects({ content }: ProjectsProps) {
 				<p className="mt-6 text-base leading-8 text-neutral-300 sm:text-lg">
 					{content.description}
 				</p>
-			</div>
+			</ScrollReveal>
 
-			<ProjectCarousel
-				projects={localizedProjects}
-				content={{
-					caseStudy: content.caseStudy,
-					previous: content.previous,
-					next: content.next,
-					slides: content.slides,
-				}}
-			/>
+			<ScrollReveal delay={80}>
+				<ProjectCarousel
+					projects={localizedProjects}
+					content={{
+						caseStudy: content.caseStudy,
+						previous: content.previous,
+						next: content.next,
+						slides: content.slides,
+					}}
+				/>
+			</ScrollReveal>
 		</section>
 	);
 }

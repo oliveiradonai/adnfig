@@ -10,7 +10,7 @@ export function Footer({ content }: FooterProps) {
 
 	return (
 		<footer className="border-t border-white/10 bg-neutral-950">
-			<div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-8 text-sm text-neutral-400 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+			<div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-6 text-sm text-neutral-400 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:py-8">
 				<p>{content.rights(currentYear)}</p>
 				<p>{content.builtWith}</p>
 			</div>

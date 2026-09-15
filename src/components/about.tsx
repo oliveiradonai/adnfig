@@ -1,3 +1,5 @@
+import { ScrollReveal } from "./scroll-reveal";
+
 type AboutProps = {
 	content: {
 		eyebrow: string;
@@ -17,37 +19,45 @@ export function About({ content }: AboutProps) {
 	return (
 		<section
 			id="about"
-			className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-24 sm:px-8"
+			className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-16 sm:px-8 sm:py-24"
 		>
 			<div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
 				<div>
-					<p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
-						{content.eyebrow}
-					</p>
-					<h2 className="mainText mt-4 text-4xl font-bold text-white sm:text-6xl">
-						{content.title}
-					</h2>
-					<p className="mt-6 text-base leading-8 text-neutral-300 sm:text-lg">
-						{content.description}
-					</p>
+					<ScrollReveal>
+						<p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+							{content.eyebrow}
+						</p>
+						<h2 className="mainText mt-4 text-4xl font-bold text-white sm:text-6xl">
+							{content.title}
+						</h2>
+						<p className="mt-6 text-base leading-8 text-neutral-300 sm:text-lg">
+							{content.description}
+						</p>
+					</ScrollReveal>
 
 					<div className="mt-10 grid gap-3">
-						{content.skills.map(([label, value]) => (
-							<div
+						{content.skills.map(([label, value], index) => (
+							<ScrollReveal
 								key={label}
-								className="grid gap-1 border-b border-white/10 pb-3 sm:grid-cols-[140px_1fr]"
+								className="grid gap-1 border-b border-white/10 pb-3 transition-colors duration-200 ease-out sm:grid-cols-[140px_1fr]"
+								delay={70 + index * 45}
 							>
 								<span className="font-semibold text-white">{label}</span>
 								<span className="text-neutral-300">{value}</span>
-							</div>
+							</ScrollReveal>
 						))}
 					</div>
 				</div>
 
 				<ol className="relative space-y-8 border-l border-white/10 pl-6">
-					{content.timeline.map((item) => (
-						<li key={`${item.company}_${item.period}`} className="relative">
-							<div className="absolute -left-7.75 top-1 h-3 w-3 rounded-full bg-brand shadow-[0_0_0_6px_rgba(229,75,75,0.12)]" />
+					{content.timeline.map((item, index) => (
+						<ScrollReveal
+							as="li"
+							key={`${item.company}_${item.period}`}
+							className="relative rounded-lg p-1 transition-colors duration-150 ease-out"
+							delay={index * 55}
+						>
+							<div className="absolute -left-8 top-2 h-3 w-3 rounded-full bg-brand shadow-[0_0_0_6px_rgba(229,75,75,0.12)]" />
 							<p className="text-sm font-semibold uppercase tracking-[0.16em] text-neutral-500">
 								{item.period}
 							</p>
@@ -58,7 +68,7 @@ export function About({ content }: AboutProps) {
 							<p className="mt-3 text-base leading-7 text-neutral-300">
 								{item.description}
 							</p>
-						</li>
+						</ScrollReveal>
 					))}
 				</ol>
 			</div>
